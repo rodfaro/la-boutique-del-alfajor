@@ -11,7 +11,15 @@ font-family: Poppins, Arial, Helvetica, sans-serif;
 background-color: #f8ebe2;
 }
 
+
+
 /* Responsive para celulares*/
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
 /* Barra de navegacion*/
 .nav-bar{
@@ -48,13 +56,14 @@ max-width: 100%;
 height: auto;
 }
 
+
 /* Heroe principal para cel*/
 .hero { 
     display: flex;
     align-items: center;
     justify-content: flex-start;
 
-    height: 250px;
+    max-height: 350px;
     padding: 20px;
     
     background-image: url('./recursos/img/hero.png');
@@ -98,6 +107,99 @@ height: auto;
     transform: translateY(-2px);
 }
 
+/* Body de index.html */
+
+div h2 {
+    padding: 0 120px;
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+main .catalogo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+
+    justify-content: center;
+}
+
+.carta-producto{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 0 0 30px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #ffe3c0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.20);
+}
+
+
+.carta-producto img{
+    border-radius: 10px;
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carta-producto h3, .carta-producto p{
+    padding: 5px 10px;
+    font-size: 18px;
+}
+
+.carta-producto p{
+    padding: 5px 0px 15px 10px;
+}
+
+.carta-producto button{
+    align-self: center;
+    padding: 15px 60px;
+
+    background-color: #9f6d3a;
+    color: #fff;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 15px;
+    
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+main .btnVerProductos{
+    align-self: center;
+    padding: 20px 100px;
+    margin-bottom: 20px;
+
+    display: inline-block;
+
+    padding: 15px 70px;
+
+    background-color: #9f6d3a;
+    color: #fff;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 8px;
+    
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pie{
+    display: flex;
+    justify-content: center;
+    background-color: #ffe3c0;
+
+    padding: 15px;
+
+    font-size: 14px;
+    
+}
 
 /*RESPONSIVE PARA ESCRITORIOS*/
 @media (min-width: 768px){
@@ -132,4 +234,10 @@ height: auto;
     font-size: 48px;
     line-height: 1.2;
 }
+
+main .btnVerProductos{
+    padding: 12px 150px;
 }
+}
+
+
