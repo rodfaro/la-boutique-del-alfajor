@@ -1,0 +1,20 @@
+[
+    {
+        "id": 0,
+        "nombre": "Alfajor clásico con dulce de leche",
+        "precio": 2700,
+        "img": "/recursos/img/alfajor-negro.jpg"
+    },
+    {
+        "id": 1,
+        "nombre": "Alfajor clásico blanco",
+        "precio": 2700,
+        "img": "/recursos/img/alfajor-blanco.jpg" 
+    },
+    {
+        "id": 2,
+        "nombre": "Alfajor negro con chocolates",
+        "precio": 2700,
+        "img": "/recursos/img/alfajor-negro2.jpg" 
+    }
+]
