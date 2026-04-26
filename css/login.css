@@ -1,0 +1,86 @@
+html {
+  --s: 200px; /* control the size*/
+  --c1: #1d1d1d;
+  --c2: #4e4f51;
+  --c3: #3c3c3c;
+  
+  background:
+    repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 50%) 
+     calc(var(--s)/2) calc(var(--s)*tan(30deg)/2),
+    repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 50%);
+  background-size: var(--s) calc(var(--s)*tan(30deg));
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100svh;
+    font-size: larger;
+}
+
+.form-contenedor{
+    display: flex;
+    flex-direction: column;
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 0.55);
+
+    max-width: 350px;
+    height: 470px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 50px;
+    gap: 10px;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+}
+form+p{
+    text-align: center;
+}
+
+input, button{
+    margin-top: 20px;
+    border: 1px solid #dbdbdb;
+    border-radius: 15px;
+    padding: 15px 25px;
+    font-size: 19px;
+}
+
+.escondido{
+    display: none;  
+    justify-content: center;
+
+    color: red;
+    
+    font-size: 14px;
+    font-weight: 600;
+
+}
+
+.login-form button{
+    background-color: rgb(20, 94, 221);
+    color: white;
+    font-size: 18px;
+    border: unset;
+    cursor: pointer;
+
+    margin-bottom: 15px;
+}
+
+label{
+    display: none;
+}
+
+@media (min-width: 768px){
+    .form-contenedor{
+        min-width: 500px;
+        max-height: 442px;
+    }
+    
+    .escondido{
+        font-size: 15px;
+    }
+}
