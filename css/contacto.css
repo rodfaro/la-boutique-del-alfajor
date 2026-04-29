@@ -1,0 +1,174 @@
+/* MAIN */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #f8ebe2;
+}
+
+
+/* NAV */
+.nav-bar{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    background-color: #f2ede7;
+    padding: 10px;
+}
+
+.nav-bar img{
+    max-width: 150px;
+    height: auto;
+}
+
+.nav-bar ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.nav-bar a{
+    font-size: 16px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.nav-bar a:hover{
+    color: #9f6d3a;
+}
+
+
+/* HERO */
+.hero { 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+
+    max-height: 350px;   /* OJO! Se achica demasiado*/
+    padding: 20px;
+    
+    background-image: url('/recursos/img/contacto.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero-content h1 {
+    font-size: 28px;
+}
+
+
+/* FORMULARIO */
+.formulario {
+    padding: 60px 20px;
+}
+
+.form-contenedor {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-contenedor h2 {
+    text-align: center;
+    color: #9f6d3a;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+label {
+    font-size: 14px;
+    color: #333;
+}
+
+input, select, textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+input:focus, select:focus, textarea:focus {
+    border: 1px solid #9f6d3a;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 12px;
+
+    background-color: #9f6d3a;
+    color: #fff;
+
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #7a4f28;
+}
+
+
+/* FOOTER */
+.pie{
+    display: flex;
+    justify-content: center;
+    background-color: #ffe3c0;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+
+/* RESPONSIVE */
+@media (min-width: 768px){
+
+.nav-bar{
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+.nav-bar ul{
+    flex-direction: row;
+    gap: 25px;
+}
+
+.hero{
+    height: 400px;
+}
+
+.hero-content h1{
+    font-size: 48px;
+}
+
+form {
+    padding: 30px;
+}
+}

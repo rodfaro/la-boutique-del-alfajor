@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La boutique del Alfajor</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/inicio.css">
+    <link rel="stylesheet" href="./css/contacto.css">
+    <script type="module" src="./recursos/js/app.js"></script>
+</head>
+<body>
+    <!-- NAV -->
+    <header>
+        <nav class="nav-bar">
+            <a href="./index.html">
+                <img src="./recursos/img/logo-sinfondo.png" width="150px" alt="logo de la tienda">
+            </a>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Contacto</h1>
+            </div>
+        </section>
+
+        <!-- FORMULARIO -->
+         <section class="formulario">
+            <div class="form-contenedor">
+
+                <h2>¿En qué podemos ayudarte?</h2>
+                <p class="subtitulo">
+                    Completá el formulario y nos contactaremos con vos
+                </p>
+
+                <form action="/contacto" method="POST">
+
+                    <label for="nombre">Tu nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="email">Tu correo electrónico</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="asunto">Asunto</label>
+                    <select id="asunto" name="asunto">
+                        <option value="consultas">Consultas</option>
+                        <option value="compras">Compras</option>
+                        <option value="reclamos">Reclamos</option>
+                    </select>
+
+                    <label for="mensaje">Tu mensaje (opcional)</label>
+                    <textarea id="mensaje" name="mensaje"></textarea>
+
+                    <button type="submit">Enviar mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="pie">
+        <p>&copy;2026 La Boutique del Alfajor. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
