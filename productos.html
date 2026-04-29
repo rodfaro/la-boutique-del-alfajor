@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La boutique del Alfajor</title>
+    <title>Productos del boutique</title>
     <link rel="stylesheet" href="./css/global.css">
-    <link rel="stylesheet" href="./css/inicio.css">
+    <link rel="stylesheet" href="./css/producto.css">
     <script type="module" src="./recursos/js/app.js"></script>
 </head>
 <body>
@@ -22,48 +22,48 @@
             </ul>
         </nav>
     </header>
-
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>La boutique del Alfajor</h1>
-                <p>Descubrí y solicita los más deliciosos alfajores desde la comodidad de tu casa.</p>
-                <button class="btnProductos">Ver productos</button>
+
+        <!-- SUBTITULO + FILTRO -->
+        <section class="encabezado-tienda">
+
+            <div class="subtitulo">
+                <h1>Tienda</h1>
+                <p>
+                    <a href="index.html">Home</a>
+                    <span> - </span>
+                    <span>Tienda</span>
+                </p>
             </div>
+
+            <div class="select-Filtro">
+                <select>
+                    <option>Orden Predeterminado</option>
+                    <option>Precio: Mayor a Menor</option>
+                    <option>Precio: Menor a Mayor</option>
+                </select>
+            </div>
+
         </section>
 
-        <div>
-            <h2>Algunos de nuestros productos</h2>
-        </div> 
-        
+
+
+        <!-- PRODUCTOS -->
         <section class="catalogo" id="catalogo-index">
             
             <!--Plantilla catalogo de productos-->
+            
 
-            <!-- <div class="carta-producto">
+            <div class="carta-producto">
                 <img src="./recursos/img/alfajor-negro.jpg" alt="alfajor clasico con DDL">
                 <h3>Alfajor clásico dulce de leche</h3>
                 <p>$2600</p>
                 <button class="botonCatalogo">Añadir al carrito</button>
             </div>
-
-            <div class="carta-producto">
-                <img src="./recursos/img/alfajor-blanco.jpg" alt="alfajor clasico">
-                <h3>Alfajor chocolate blanco</h3>
-                <p>$2700</p>
-                <button class="botonCatalogo">Añadir al carrito</button>
-            </div>
-
-            <div class="carta-producto">
-                <img src="./recursos/img/alfajor-negro2.jpg" alt="alfajor clasico">
-                <h3>Alfajor triple de Chocolate</h3>
-                <p>$3000</p>
-                <button class="botonCatalogo">Añadir al carrito</button>
-            </div> -->
+            
         </section>
-        <button class="btnVerProductos">Ver todos los productos  ></button>
+        
     </main>
-    
     <footer class="pie">
         <p>&copy;2026 La Boutique del Alfajor. Todos los derechos reservados.</p>
     </footer>

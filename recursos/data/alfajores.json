@@ -16,5 +16,35 @@
         "nombre": "Alfajor negro con chocolates",
         "precio": 2700,
         "img": "/recursos/img/alfajor-negro2.jpg" 
+    },
+    {
+        "id": 3,
+        "nombre": "Alfajores de chocolate con dulce de leche",
+        "precio": 12000,
+        "img": "./recursos/img/alfajores de chocolate con dulce de leche.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Alfajores de Maicena Clasico",
+        "precio": 23000,
+        "img": "./recursos/img/alfajores de Maicena.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Alfajores de Mousse",
+        "precio": 31000,
+        "img": "./recursos/img/alfajores de Mousse.PNG"
+    },
+    {
+        "id": 6,
+        "nombre": "Alfajores de maicena con pistacho",
+        "precio": 43000,
+        "img": "./recursos/img/alfajores de pistacho 1.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "Alfajores de maicena con pistacho 2",
+        "precio": 42000,
+        "img": "./recursos/img/alfajores de pistacho 2.jpg"
     }
 ]

@@ -1,0 +1,255 @@
+
+/*-------------------------------- HEADER ---------------------------*/
+
+/* Barra de navegacion*/
+.nav-bar{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    background-color: #f2ede7;
+    padding: 10px;
+}
+
+.nav-bar img{
+    max-width: 150px;
+    height: auto;
+}
+
+.nav-bar ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.nav-bar a{
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-bar a:hover{
+    font-size: 20px;
+    text-decoration: none;
+    color: #9f6d3a;
+    transition: all 0.1s ease;
+}
+
+/* IMAGENES RESPONSIVE */
+img{
+max-width: 100%;
+height: auto;
+}
+
+/*----------------------- MAIN ------------------- */
+
+/* SUBTITULO + FILTRO */
+.encabezado-tienda{
+  width: 100%; 
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* SUBTITULO */
+.subtitulo{
+  display: flex;
+  flex-direction: column;
+}
+
+.subtitulo h1{
+  margin: 0;
+  font-size: 40px;
+}
+
+.subtitulo p{
+  margin-top: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+.subtitulo a{
+  color: #9f6d3a;        /* marrón suave acorde a tu diseño */
+  text-decoration: none; /* sin subrayado */
+  font-weight: 500;
+}
+
+.subtitulo a:hover{
+  color: #7a4f28;        /* un poco más oscuro al pasar el mouse */
+}
+
+/* FILTRO */
+.select-Filtro{
+  margin-left: auto; /* clave */
+}
+
+.select-Filtro select{
+  border: none;
+  background: transparent;
+  font-size: 16px;     
+  padding: 8px 12px;   
+  cursor: pointer;
+}
+
+/* Body de productos.html */
+
+div h2 {
+    padding: 0 120px;
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.catalogo{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.carta-producto{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #ffe3c0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.20);
+    transition: all 0.3s ease;
+}
+
+.carta-producto:hover{
+    transform: translateY(-10px) scale(1.02); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.30); 
+}
+
+.carta-producto img{
+    border-radius: 10px;
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.carta-producto h3{
+    display: flex;
+    padding: 5px 10px;
+    font-size: 18px;
+}
+
+.carta-producto p{
+    font-size: 18px;
+    padding: 5px 0px 15px 10px;
+}
+
+.carta-producto button{
+    align-self: center;
+    padding: 15px 60px;
+
+    background-color: #9f6d3a;
+    color: #fff;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 15px;
+    
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carta-producto button:hover {
+    background-color: #7a4f28;
+}
+
+
+/*----------------------- FOOTER ------------------------*/
+
+.pie{
+    display: flex;
+    justify-content: center;
+    background-color: #ffe3c0;
+
+    padding: 15px;
+
+    font-size: 14px;
+    
+}
+
+
+/*---------------------- RESPONSIVE -----------------------*/
+
+/* Responsive para celulares*/
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #f8ebe2;
+}
+
+@media (max-width: 768px){
+  .encabezado-tienda{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .bloque-derecho{
+    align-self: flex-end;
+  }
+}
+
+/*RESPONSIVE PARA ESCRITORIOS*/
+@media (min-width: 768px){
+
+/*Barra de navegacionm*/
+.nav-bar{
+    flex-direction: row; /* horizontal */
+    justify-content: space-between;
+    padding: 10px 30px;
+    height: 100px;
+}
+
+.nav-bar ul{
+    flex-direction: row; /* menú en fila */
+    gap: 25px;
+}
+
+.nav-bar a{
+    font-size: 18px;
+}
+
+}
+
+
+/* Responsive para el catalogo */
+@media (max-width: 1024px){
+  .catalogo{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px){
+  .catalogo{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px){
+  .catalogo{
+    grid-template-columns: 1fr;
+  }
+}
+
+
