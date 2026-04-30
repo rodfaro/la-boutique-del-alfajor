@@ -1,6 +1,5 @@
 import { renderizarProductos } from "./render.js";
 import { obtenerAlfajores } from "./api.js";
-import { renderizarProductosIndex } from "./render.js";
 
 const url = '/recursos/data/alfajores.json'; //ruta para el fetch
 
