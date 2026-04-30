@@ -1,7 +1,7 @@
 import { renderizarProductos } from "./render.js";
 import { obtenerAlfajores } from "./api.js";
 
-const url = '/recursos/data/alfajores.json'; //ruta para el fetch
+const url = 'https://69f3c243bd2396bf5310593e.mockapi.io/api/laBoutique/Productos'; //ruta para el fetch
 
 
 //index.html
