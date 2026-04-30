@@ -1,0 +1,24 @@
+{
+  "name": "la-boutique-del-alfajor",
+  "version": "1.0.0",
+  "description": "Proyecto Aplicaciones Web II.\r Pagina web de tienda de alfajores frontend & backend.",
+  "main": "index.mjs",
+  "scripts": {
+    "dev": "node --watch server.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodfaro/la-boutique-del-alfajor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/rodfaro/la-boutique-del-alfajor/issues"
+  },
+  "homepage": "https://github.com/rodfaro/la-boutique-del-alfajor#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
