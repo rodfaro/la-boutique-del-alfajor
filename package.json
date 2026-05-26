@@ -4,7 +4,7 @@
   "description": "Proyecto Aplicaciones Web II.\r Pagina web de tienda de alfajores frontend & backend.",
   "main": "index.mjs",
   "scripts": {
-    "dev": "node --watch server.mjs"
+    "dev": "nodemon server.mjs"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/rodfaro/la-boutique-del-alfajor#readme",
   "dependencies": {
-    "express": "5.2.1"
+    "express": "5.2.1",
+    "pg": "^8.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }
