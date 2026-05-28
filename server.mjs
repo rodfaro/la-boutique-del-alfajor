@@ -1,10 +1,19 @@
 import express from 'express'
 
+import './iniciar.env.mjs'
+
 //importamos rutas de los alfajores
-import rutasModuloAlfajores from './public/recursos/modulos/alfajores/rutas-alfajores.mjs'
+import rutasModuloAlfajores from './modulos/alfajores/rutas-alfajores.mjs'
+
+//Variable de entorno
 
 
-const PUERTO = 3000;
+
+
+
+const PUERTO = process.env.PUERTO || 3000;
+console.log(process.env.PUERTO)
+
 const app = express();
 
 app.use(rutasModuloAlfajores)
