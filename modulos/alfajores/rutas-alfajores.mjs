@@ -6,5 +6,6 @@ import * as controlador from './controlador-alfajores.mjs'
 const rutasAlfajores = new Router()
 
 rutasAlfajores.get('/api/v1/productos', controlador.obtenerTodos)
+rutasAlfajores.post('/api/v1/productos', controlador.crearUno)
 
-export default rutasAlfajores 
+export default rutasAlfajores

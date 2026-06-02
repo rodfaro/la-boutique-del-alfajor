@@ -12,6 +12,4 @@ const pool = new pg.Pool({
 //Exportamos para hacerlo vicible desde otro modulo
 //default es no nombrado --> se importa en las llaves
 
-console.log(process.env.BD_PASSWORD)
-
 export default pool
