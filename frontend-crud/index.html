@@ -7,10 +7,16 @@
 </head>
 <body>
     <form action="/api/v1/productos" method="post" enctype="multipart/form-data">
-        <input type="text" name="nombre" id="">
-        <input type="text" name="precio" id="">
-        <input type="file" name="CampoArchivo" id="">
-        <button type="submit">Enviar</button>
+        <label for="id-nombre">Nombre</label>
+        <input type="text" name="nombre" id="id-nombre">
+        <br>
+        <label for="id-precio">Precio</label>
+        <input type="text" name="precio" id="id-precio">
+        <br>
+        <label for="id-imagen">Imagen</label>
+        <input type="file" name="archivo" id="id-imagen">
+        <br>
+        <button type="submit">Agregar producto</button>
     </form>
 </body>
 </html>

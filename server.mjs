@@ -10,13 +10,13 @@ import rutasModuloAlfajores from './modulos/alfajores/rutas-alfajores.mjs'
 const PUERTO = process.env.PUERTO || 3000;
 const app = express();
 
+app.use(express.json());
 app.use(rutasModuloAlfajores)
 
 //Middleware para leer JSON
-app.use(express.json());
 
 // Servir archivos estáticos (Frontend)
-app.use(express.static("public"));
+app.use('/', express.static("public"));
 
 app.use('/admin', express.static(path.resolve('./frontend-crud')));
 
