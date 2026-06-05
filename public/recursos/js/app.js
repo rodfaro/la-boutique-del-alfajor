@@ -1,9 +1,10 @@
 import { renderizarProductos } from "./render.js";
 import { obtenerAlfajores } from "./api.js";
 
-const url = 'https://69f3c243bd2396bf5310593e.mockapi.io/api/laBoutique/Productos'; //ruta para el fetch
+//const url = 'https://69f3c243bd2396bf5310593e.mockapi.io/api/laBoutique/Productos'; //ruta para el fetch
 
-// const url = 'http://localhost:3000/api/v1/productos'; //
+const PUERTO = 3000;
+const url = 'http://localhost:3000/api/v1/productos'; //
 
 
 //index.html
@@ -13,13 +14,18 @@ const $catalogoIndex = document.getElementById('catalogo-index'); //Contiene el 
 
 //obtener datos desde una api/json
 
-const alfajores = await obtenerAlfajores(url)
+//ejecuta un fetch que trae toda la data (alfajores)
+const data = await obtenerAlfajores(url)
 
-
+const alfajores = data.map((item) =>({
+  ...item,
+  img: `http://localhost:${PUERTO}/archivos/${item.img}`
+}));
+//console.log(alfajores)
 
 if ($catalogoIndex) {
   // Página productos → mostrar TODOS
-  renderizarProductos(alfajores, $catalogoIndex);
+  renderizarProductos(alfajores, $catalogoIndex); 
 }
 
 if ($catalogoIndexMain != null) {

@@ -8,7 +8,7 @@ function renderizarProductos(productos, $elementoDOM){
                 <img src="${alfajor.img}" alt="alfajor clasico con DDL">
                 <h3>${alfajor.nombre}</h3>
                 <p>$${alfajor.precio}</p>
-                <button data-id = "${alfajor.id}" class="botonCatalogo">Añadir al carrito</button>
+                <button data-id = "${alfajor.idproducto}" class="botonCatalogo">Añadir al carrito</button>
             </div>
         ` 
 
