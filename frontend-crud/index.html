@@ -6,6 +6,10 @@
     <title>CRUD - Subir archivo</title>
 </head>
 <body>
+    
+    <!-- POST -->
+
+    <h1>Subir producto</h1>
     <form action="/api/v1/productos" method="post" enctype="multipart/form-data">
         <label for="id-nombre">Nombre</label>
         <input type="text" name="nombre" id="id-nombre">
@@ -18,5 +22,95 @@
         <br>
         <button type="submit">Agregar producto</button>
     </form>
+
+    <!-- PUT -->
+
+    <h2>Actualizar producto</h2>
+    <!-- sin action ni method porque el envio lo hace fetch() -->
+    <form id="form-put">
+        <label for="id-put">ID del producto</label>
+        <input type="text" name="id" id="id-put">
+        <br>
+        <label for="nombre-put">Nombre</label>
+        <input type="text" name="nombre" id="nombre-put">
+        <br>
+        <label for="precio-put">Precio</label>
+        <input type="text" name="precio" id="precio-put">
+        <br>
+        <label for="imagen-put">Imagen</label>
+        <input type="file" name="archivo" id="imagen-put">
+        <br>
+        <!-- input oculto que guarda el nombre de la imagen actual -->
+        <!-- se usa si el usuario no sube una imagen nueva -->
+        <input type="hidden" name="imgActual" id="imgActual">
+
+        <!-- type="button" evita que el form se envie solo, onclick llama a la funcion -->
+        <button type="button" onclick="actualizar()">Actualizar producto</button>
+    </form>
+    
+    <script>
+            // Primero busca el producto y carga sus datos
+        async function buscarProducto() {
+            const id = document.getElementById('id-put').value;
+
+            // GET al servidor para traer los datos actuales del producto
+            const respuesta = await fetch(`/api/v1/productos/${id}`);
+            const producto = await respuesta.json();
+
+            // carga los valores actuales en los inputs del form
+            document.getElementById('nombre-put').value = producto.nombre;
+            document.getElementById('precio-put').value = producto.precio;
+            // guarda la imagen actual en el input oculto para no perderla
+            document.getElementById('imgActual').value = producto.img; 
+        }
+
+        async function actualizar() {
+            const id = document.getElementById('id-put').value;
+
+            // FormData permite enviar texto e imagenes juntos (igual que enctype="multipart/form-data")
+            const formData = new FormData();
+            
+            formData.append('nombre', document.getElementById('nombre-put').value);
+            formData.append('precio', document.getElementById('precio-put').value);
+            // enviamos la imagen actual por si no se sube una nueva
+            formData.append('imgActual', document.getElementById('imgActual').value);
+
+            // si el usuario selecciono una imagen nueva, la agregamos al FormData
+            const archivo = document.getElementById('imagen-put').files[0];
+            if (archivo) formData.append('archivo', archivo);
+
+            // fetch hace el PUT que el navegador no puede hacer solo
+            const respuesta = await fetch(`/api/v1/productos/${id}`, {
+                method: 'PUT',
+                body: formData
+            });
+
+            const datos = await respuesta.json();
+            alert(datos.mensaje);
+        }
+    </script>
+
+    <!-- DELETE -->
+    <h2>Eliminar producto</h2>
+    <label for="id-delete">ID del producto</label>
+    <input type="text" id="id-delete">
+    <br>
+    <br>
+    <button type="button" onclick="eliminar()">Eliminar producto</button>
+
+    <script>
+        async function eliminar() {
+            const id = document.getElementById('id-delete').value;
+
+            // fetch con method DELETE, no necesita body porque solo usa el ID en la URL
+            const respuesta = await fetch(`/api/v1/productos/${id}`, {
+                method: 'DELETE'
+            });
+
+            const datos = await respuesta.json();
+            alert(datos.mensaje);
+        }
+    </script>
+
 </body>
 </html>
