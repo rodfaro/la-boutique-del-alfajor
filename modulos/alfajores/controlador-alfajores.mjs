@@ -88,7 +88,7 @@ export async function crearUno(req, res){
         const datos = {
             nombreProducto: req.body.nombre,  // campo de texto del form
             precio: req.body.precio,          // campo de texto del form
-            img: req.file.filename            // nombre del archivo guardado por multer
+            img: req.file ? req.file.filename : req.body.imgActuals            // nombre del archivo guardado por multer
         }
         //console.log(req.file)
         //console.log(req.body)

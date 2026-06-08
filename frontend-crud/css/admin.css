@@ -164,6 +164,16 @@
     transform: translateY(-2px);
 }
 
+/* Botón secundario - Buscar */      
+.btn-secundario{
+    background-color: #c9a97a;
+}
+
+.btn-secundario:hover{
+    background-color: #a07840;
+}
+
+
 /* =========================
    FOOTER
 ========================= */

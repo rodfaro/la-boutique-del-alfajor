@@ -35,6 +35,8 @@
 
             <h2>➕ Agregar Producto</h2>
 
+            <!-- POST: el navegador maneja el envio directamente -->
+            <!-- action = a donde se envia, method = como se envia, enctype = formato multipart para archivos -->
             <form
                 action="/api/v1/productos"
                 method="post"
@@ -85,6 +87,8 @@
 
             <h2>✏️ Actualizar Producto</h2>
 
+            <!-- PUT: el navegador no soporta method="put" en forms, por eso lo maneja JavaScript -->
+            <!-- sin action ni method porque el envio lo hace fetch() -->
             <form id="form-put">
 
                 <label for="id-put">
@@ -97,6 +101,14 @@
                     id="id-put"
                     placeholder="Ingrese el ID">
 
+                
+                <button
+                    type="button"
+                    class="btn-secundario"
+                    onclick="buscarProducto()">
+                    Buscar producto
+                </button> 
+                
                 <label for="nombre-put">
                     Nuevo nombre
                 </label>
@@ -124,11 +136,14 @@
                     name="archivo"
                     id="imagen-put">
 
+                <!-- input oculto que guarda el nombre de la imagen actual -->
+                <!-- se usa si el usuario no sube una imagen nueva -->
                 <input
                     type="hidden"
                     name="imgActual"
                     id="imgActual">
 
+                <!-- type="button" evita que el form se envie solo, onclick llama a la funcion -->
                 <button
                     type="button"
                     onclick="actualizar()">
@@ -147,6 +162,7 @@
 
             <h2>🗑️ Eliminar Producto</h2>
 
+            <!-- DELETE: solo necesita el ID, sin archivos ni campos extra -->
             <div class="delete-container">
 
                 <label for="id-delete">
@@ -158,6 +174,7 @@
                     id="id-delete"
                     placeholder="Ingrese el ID">
 
+                <!-- fetch con method DELETE, no necesita body porque solo usa el ID en la URL -->
                 <button
                     type="button"
                     onclick="eliminar()">
@@ -183,11 +200,32 @@
 
     <script>
 
+        // Busca el producto por ID y carga sus datos en el formulario
+        async function buscarProducto() {
+
+            const id =
+                document.getElementById('id-put').value;
+
+            // GET al servidor para traer los datos actuales del producto
+            const respuesta =
+                await fetch(`/api/v1/productos/${id}`);
+
+            const producto =
+                await respuesta.json();
+
+            // carga los valores actuales en los inputs del form
+            document.getElementById('nombre-put').value = producto.nombre;
+            document.getElementById('precio-put').value = producto.precio;
+            // guarda la imagen actual en el input oculto para no perderla
+            document.getElementById('imgActual').value = producto.img;
+        }
+
         async function actualizar() {
 
             const id =
                 document.getElementById('id-put').value;
 
+            // FormData permite enviar texto e imagenes juntos (igual que enctype multipart)
             const formData =
                 new FormData();
 
@@ -201,11 +239,13 @@
                 document.getElementById('precio-put').value
             );
 
+            // enviamos la imagen actual por si no se sube una nueva
             formData.append(
                 'imgActual',
                 document.getElementById('imgActual').value
             );
 
+            // si el usuario selecciono una imagen nueva, la agregamos al FormData
             const archivo =
                 document.getElementById('imagen-put').files[0];
 
@@ -213,6 +253,7 @@
                 formData.append('archivo', archivo);
             }
 
+            // fetch hace el PUT que el navegador no puede hacer solo
             const respuesta =
                 await fetch(`/api/v1/productos/${id}`, {
                     method: 'PUT',
@@ -230,6 +271,7 @@
             const id =
                 document.getElementById('id-delete').value;
 
+            // fetch con method DELETE, no necesita body porque solo usa el ID en la URL
             const respuesta =
                 await fetch(`/api/v1/productos/${id}`, {
                     method: 'DELETE'
