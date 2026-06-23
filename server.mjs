@@ -18,7 +18,7 @@ app.use(rutasModuloAlfajores)
 // Servir archivos estáticos (Frontend)
 app.use('/', express.static("public"));
 
-app.use('/admin', express.static(path.resolve('./frontend-crud')));
+app.use('/admin', express.static(path.resolve('./frontend-crud')));  //para probar el prueba.html, usar esta ruta en el navegador: http://localhost:3000/admin/prueba.html
 
 //Carpeta para servir archivos(imagenes)
 app.use('/archivos', express.static(path.resolve('./archivos')));
