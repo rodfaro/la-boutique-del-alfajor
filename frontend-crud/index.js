@@ -79,7 +79,7 @@ btnCrear.addEventListener('click', ()=>{
 
     //Ajustes
     inputId.value = ''; // --->  para saber que se trata de crear un nuevo producto
-    tituloDialog.textContent = 'Crear producto nuevo';
+    tituloDialog.textContent = 'Agregar nuevo producto';
     dialog.showModal();
 });
 

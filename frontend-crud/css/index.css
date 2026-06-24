@@ -1,15 +1,16 @@
 /* ===== Base ===== */
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #fdf6ec;
-    color: #3b2a1a;
+    background-color: #FDF6EC;
+    color: #3B2A1A;
 }
 
 h1 {
     text-align: center;
-    background-color: #7a4a26;
-    color: #ffffff;
+    background-color: #7A4A26;
+    color: #FFFFFF;
     margin: 0;
     padding: 1.2rem 0;
     font-size: 1.6rem;
@@ -17,6 +18,7 @@ h1 {
 }
 
 /* ===== Contenedor general ===== */
+
 .contenedor-crud {
     display: flex;
     justify-content: center;
@@ -24,19 +26,20 @@ h1 {
 }
 
 .tablero-crud {
-    background-color: #ffffff;
-    border: 1px solid #e3d2b8;
+    background-color: #FFFFFF;
+    border: 1px solid #E3D2B8;
     border-radius: 10px;
     padding: 1.5rem;
     width: 100%;
     max-width: 900px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px #00000014;
 }
 
-/* ===== Botón "Crear +" ===== */
+/* ===== Botón "Agregar" ===== */
+
 .tablero-crud > button {
-    background-color: #3f7d3f;
-    color: #ffffff;
+    background-color: #3F7D3F;
+    color: #FFFFFF;
     border: none;
     border-radius: 6px;
     padding: 0.6rem 1.2rem;
@@ -61,8 +64,8 @@ h1 {
 }
 
 .tabla tr:first-child {
-    background-color: #7a4a26;
-    color: #ffffff;
+    background-color: #7A4A26;
+    color: #FFFFFF;
 }
 
 .tabla tr:first-child td {
@@ -72,20 +75,20 @@ h1 {
 }
 
 .tabla tr:not(:first-child) {
-    background-color: #fffaf3;
+    background-color: #FFFAF3;
 }
 
 .tabla tr:not(:first-child):nth-child(even) {
-    background-color: #f6ead8;
+    background-color: #F6EAD8;
 }
 
 .tabla tr:not(:first-child):hover {
-    background-color: #f0ddbb;
+    background-color: #F0DDBB;
 }
 
 .tabla td {
     padding: 0.8rem;
-    border-bottom: 1px solid #e3d2b8;
+    border-bottom: 1px solid #E3D2B8;
     text-align: left;
     font-size: 0.92rem;
 }
@@ -96,7 +99,7 @@ h1 {
     border-radius: 5px;
     padding: 0.45rem 0.9rem;
     font-size: 0.85rem;
-    color: #ffffff;
+    color: #FFFFFF;
     cursor: pointer;
 }
 
@@ -106,15 +109,138 @@ h1 {
 
 /* Las dos columnas de acciones ahora viven en el mismo td,
    así que les damos un poco de separación entre sí */
+
 .tabla td .btnEditar,
 .tabla td .btnEliminar {
     margin-right: 0.4rem;
 }
 
 .btnEditar {
-    background-color: #3b6fc7;
+    background-color: #3B6FC7;
+}
+
+.btnEditar:hover {
+    background-color: #2F5AA3;
 }
 
 .btnEliminar {
-    background-color: #c2453b;
+    background-color: #C2453B;
+}
+
+.btnEliminar:hover {
+    background-color: #A53830;
+}
+
+
+
+/* ===== Modal ===== */
+.modal {
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+    width: 450px;
+    max-width: 90%;
+    overflow: hidden;
+    box-shadow: 0 6px 20px #00000033;
+}
+
+.modal::backdrop {
+    background-color: #00000080;
+}
+
+/* ===== Formulario ===== */
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.5rem;
+    background-color: #FFFAF3;
+}
+
+/* ===== Título ===== */
+
+.titulo-modal {
+    background-color: #7A4A26;
+    color: #FFFFFF;
+    text-align: center;
+    margin: -1.5rem -1.5rem 1rem -1.5rem;
+    padding: 1rem;
+}
+
+/* ===== Etiquetas ===== */
+
+.label-modal {
+    font-weight: bold;
+    color: #3B2A1A;
+}
+
+/* ===== Inputs ===== */
+
+.input-modal {
+    padding: 0.7rem;
+    border: 1px solid #D9C4A5;
+    border-radius: 6px;
+    background-color: #FDF6EC;
+    color: #3B2A1A;
+    font-size: 0.95rem;
+}
+
+.input-modal:focus {
+    outline: none;
+    border-color: #7A4A26;
+    box-shadow: 0 0 0 3px #E3D2B8;
+}
+
+/* ===== Botón del selector de archivos ===== */
+
+.input-modal::file-selector-button {
+    background-color: #7A4A26;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    margin-right: 0.8rem;
+}
+
+.input-modal::file-selector-button:hover {
+    background-color: #633B1E;
+}
+
+/* ===== Acciones del modal ===== */
+
+.acciones-dialog {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+/* ===== Botones del modal ===== */
+
+#btnCancelar,
+#btnCrearAlfajor {
+    border: none;
+    border-radius: 6px;
+    padding: 0.7rem 1.2rem;
+    color: #FFFFFF;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#btnCancelar {
+    background-color: #C2453B;
+}
+
+#btnCancelar:hover {
+    background-color: #A53830;
+}
+
+#btnCrearAlfajor {
+    background-color: #3F7D3F;
+}
+
+#btnCrearAlfajor:hover {
+    background-color: #336633;
 }

@@ -11,7 +11,7 @@
     <h1>ADMIN - CRUD</h1>
     <section class="contenedor-crud">
         <div class="tablero-crud">
-            <button id="btnCrear" type="button">Crear +</button>
+            <button id="btnCrear" type="button">Agregar</button>
             <div class="grilla-contenedor">
                 <table id="tabla-productos" class="tabla">
 
@@ -21,20 +21,22 @@
     </section>
 
     <!-- DIALOG / DAR DE ALTA ALFAJOR -->
-      <!-- ===== MODAL: se abre con btnCrear, se cierra con btnCancelar o al guardar ===== -->
-    <dialog id="dialogProducto">
-        <form id="formProducto">
-            <h2 id="TituloDialog">Nuevo alfajor</h2>
+    <!-- ===== MODAL: se abre con btnCrear, se cierra con btnCancelar o al guardar ===== -->
+    <dialog id="dialogProducto" class="modal">
+        <form id="formProducto" class="formulario">
+            <h2 id="TituloDialog" class="titulo-modal">Nuevo alfajor</h2>
+
             <input type="hidden" id="productoId">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" required>
- 
-            <label for="precio">Precio</label>
-            <input type="number" id="precio" name="precio" min="0" step="0.01" required>
- 
-            <label for="imagen">Imagen</label>
-            <input type="file" id="imagen" name="imagen" accept="image/*">
- 
+
+            <label class="label-modal" for="nombre">Nombre</label>
+            <input class="input-modal" type="text" id="nombre" name="nombre" required>
+
+            <label class="label-modal" for="precio">Precio</label>
+            <input class="input-modal" type="number" id="precio" name="precio" min="0" step="0.01" required>
+
+            <label class="label-modal" for="imagen">Imagen</label>
+            <input class="input-modal" type="file" id="imagen" name="imagen" accept="image/*">
+
             <div class="acciones-dialog">
                 <button type="button" id="btnCancelar">Cancelar</button>
                 <button type="button" id="btnCrearAlfajor">Guardar</button>
