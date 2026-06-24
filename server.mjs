@@ -23,6 +23,8 @@ app.use('/admin', express.static(path.resolve('./frontend-crud')));  //para prob
 //Carpeta para servir archivos(imagenes)
 app.use('/archivos', express.static(path.resolve('./archivos')));
 
+//faltan rutas fetch
+
 
 app.listen(PUERTO, ()=>{
     console.log(`Servidor escuchando en http://localhost:${PUERTO}`)

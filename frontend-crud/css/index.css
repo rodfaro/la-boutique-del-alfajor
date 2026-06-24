@@ -1,0 +1,120 @@
+/* ===== Base ===== */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fdf6ec;
+    color: #3b2a1a;
+}
+
+h1 {
+    text-align: center;
+    background-color: #7a4a26;
+    color: #ffffff;
+    margin: 0;
+    padding: 1.2rem 0;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+/* ===== Contenedor general ===== */
+.contenedor-crud {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.tablero-crud {
+    background-color: #ffffff;
+    border: 1px solid #e3d2b8;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Botón "Crear +" ===== */
+.tablero-crud > button {
+    background-color: #3f7d3f;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 1.2rem;
+}
+
+.tablero-crud > button:hover {
+    background-color: #336633;
+}
+
+/* ===== Tabla ===== */
+.grilla-contenedor {
+    overflow-x: auto;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla tr:first-child {
+    background-color: #7a4a26;
+    color: #ffffff;
+}
+
+.tabla tr:first-child td {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.tabla tr:not(:first-child) {
+    background-color: #fffaf3;
+}
+
+.tabla tr:not(:first-child):nth-child(even) {
+    background-color: #f6ead8;
+}
+
+.tabla tr:not(:first-child):hover {
+    background-color: #f0ddbb;
+}
+
+.tabla td {
+    padding: 0.8rem;
+    border-bottom: 1px solid #e3d2b8;
+    text-align: left;
+    font-size: 0.92rem;
+}
+
+/* ===== Botones de acciones ===== */
+.tabla td button {
+    border: none;
+    border-radius: 5px;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.85rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.tabla td button:hover {
+    opacity: 0.9;
+}
+
+/* Las dos columnas de acciones ahora viven en el mismo td,
+   así que les damos un poco de separación entre sí */
+.tabla td .btnEditar,
+.tabla td .btnEliminar {
+    margin-right: 0.4rem;
+}
+
+.btnEditar {
+    background-color: #3b6fc7;
+}
+
+.btnEliminar {
+    background-color: #c2453b;
+}
