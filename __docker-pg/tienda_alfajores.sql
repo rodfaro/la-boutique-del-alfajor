@@ -26,3 +26,17 @@ INSERT INTO Productos (Nombre, Precio, Img) VALUES
 ('Alfajores de maicena con pistacho', 43000, 'ImgAlfajorPistacho'),
 
 ('Alfajores de maicena con pistacho 2', 42000, 'ImgAlfajorPistacho2');
+
+-- Crear la tabla
+CREATE TABLE admin (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(150) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    session_id VARCHAR(255) UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Insertar datos
+-- Usuario: admin | Contraseña: admin123 (hash generado con bcrypt)
+INSERT INTO admin (username, password_hash) VALUES
+('admin', '$2b$10$c.eH2yGFdPP93ya6BlhCCOMtMZ9ZndCcLMDCsLXn/dUFy8QkDezO.');
