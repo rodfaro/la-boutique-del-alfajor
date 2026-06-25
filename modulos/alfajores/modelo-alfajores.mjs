@@ -1,8 +1,11 @@
 import pool from '../../bd/conexion-bd.mjs'
 
 // GET - obtenerTodos
+// Sin ORDER BY, PostgreSQL no garantiza ningún orden en los resultados,
+// y después de un UPDATE puede devolver las filas en cualquier orden.
+// Con ASC siempre van a aparecer ordenadas por ID de menor a mayor.
 export async function obtenerTodos(){
-    const resultado = await pool.query('SELECT * FROM Productos')//<-- promesa
+    const resultado = await pool.query('SELECT * FROM Productos ORDER BY idproducto ASC')//<-- promesa
     return resultado
 }
 
